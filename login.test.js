@@ -1,10 +1,10 @@
-const {login} = require('./login');
+const { login} = require('./login');
 describe('Authentication Tests', () => {
     describe('Login', () => {
         it('should successfully log in with valid credentials', () => {
             const result = login('test@example.com', 'password123');
             expect(result.success).toBe(true);
-            expect(result.message).toBe('Login successful.');
+            expect(result.message).toBe('Login is successful.');
         });
         it('should fail to log in with invalid credentials', () => {
             const result = login('wrong@example.com', 'wrongpassword');
@@ -12,9 +12,10 @@ describe('Authentication Tests', () => {
             expect(result.message).toBe('Invalid credentials.');
         });
         it('should throw an error if email or password is not provided', () => {
-            expect(() => login('', 'password')).toThrow('Email and password are required.');
-            expect(() => login('email', '')).toThrow('Email and password are required.');
+            expect(() => login('', 'password')).toThrow('Email and password are required credentials.');
+            expect(() => login('email', '')).toThrow('Email and password are required credentials.');
         });
     });
 });
+
  

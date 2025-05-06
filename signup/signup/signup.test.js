@@ -1,12 +1,12 @@
 const {signup} = require('./signup');
 describe('Signup', () => {
-  it('Successfully sign up with valid credentials', () => {
+  it('should successfully sign up with valid credentials', () => {
       const result = signup('newuser@example.com', 'newpassword');
       expect(result.success).toBe(true);
-      expect(result.message).toBe('Signup successful.');
+      expect(result.message).toBe('Signup is successful.');
   });
-  it('Throw an error if email or password is not provided', () => {
-       expect(() => signup('', 'password')).toThrow('Email and password are required.');
-      expect(() => signup('email', '')).toThrow('Email and password are required.');
+  it('should throw an error if email or password is not provided', () => {
+       expect(() => signup('', 'password')).toThrow('Email and password are required credentials.');
+      expect(() => signup('email', '')).toThrow('Email and password are required credentials.');
   });
 });
